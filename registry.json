@@ -1,0 +1,184 @@
+{
+  "version": "1.2.0",
+  "templates": {
+    "code_gen": {
+      "function": {
+        "path": "code_gen/function.md",
+        "description": "生成函数/方法代码",
+        "variables": ["language", "function_name", "description", "params", "returns", "examples"]
+      },
+      "class": {
+        "path": "code_gen/class.md",
+        "description": "生成类定义",
+        "variables": ["language", "class_name", "description", "methods", "attributes"]
+      },
+      "api": {
+        "path": "code_gen/api.md",
+        "description": "生成 API 端点",
+        "variables": ["framework", "endpoints", "models", "auth_type"]
+      },
+      "refactor": {
+        "path": "code_gen/refactor.md",
+        "description": "代码重构/优化",
+        "variables": ["code", "issues", "goals", "constraints"]
+      },
+      "sql": {
+        "path": "code_gen/sql.md",
+        "description": "生成 SQL 查询",
+        "variables": ["query_description", "db_type", "table_schema"]
+      },
+      "unit_test": {
+        "path": "code_gen/unit_test.md",
+        "description": "生成单元测试",
+        "variables": ["code", "language", "test_framework", "mock_requirements"]
+      },
+      "code_review": {
+        "path": "code_gen/code_review.md",
+        "description": "代码审查 Checklist",
+        "variables": ["code", "language"]
+      },
+      "commit_message": {
+        "path": "code_gen/commit_message.md",
+        "description": "生成 Git Commit Message",
+        "variables": ["changes_description", "issue", "breaking"]
+      },
+      "dockerfile": {
+        "path": "code_gen/dockerfile.md",
+        "description": "生成 Dockerfile",
+        "variables": ["application_description", "language", "framework", "port", "dependencies"]
+      }
+    },
+    "data_analysis": {
+      "eda": {
+        "path": "data_analysis/eda.md",
+        "description": "探索性数据分析",
+        "variables": ["data_source", "columns", "analysis_goals", "output_format"]
+      },
+      "cleaning": {
+        "path": "data_analysis/cleaning.md",
+        "description": "数据清洗流程",
+        "variables": ["data_issues", "cleaning_rules", "validation"]
+      },
+      "visualization": {
+        "path": "data_analysis/visualization.md",
+        "description": "数据可视化",
+        "variables": ["chart_type", "data", "x_axis", "y_axis", "style"]
+      },
+      "ml_pipeline": {
+        "path": "data_analysis/ml_pipeline.md",
+        "description": "机器学习管道",
+        "variables": ["task_type", "features", "target", "models", "metrics"]
+      },
+      "sql_analysis": {
+        "path": "data_analysis/sql_analysis.md",
+        "description": "SQL 数据分析",
+        "variables": ["analysis_goal", "db_type", "tables", "time_range", "metrics"]
+      },
+      "excel_formula": {
+        "path": "data_analysis/excel_formula.md",
+        "description": "Excel 公式生成",
+        "variables": ["problem_description", "range", "data_structure", "expected_result"]
+      },
+      "regex": {
+        "path": "data_analysis/regex.md",
+        "description": "正则表达式生成",
+        "variables": ["task_description", "input_example", "expected_match", "language"]
+      },
+      "json_yaml": {
+        "path": "data_analysis/json_yaml.md",
+        "description": "JSON/YAML 处理",
+        "variables": ["task_type", "input_format", "input_data", "output_format"]
+      }
+    },
+    "docs": {
+      "readme": {
+        "path": "docs/readme.md",
+        "description": "README 文档生成",
+        "variables": ["project_name", "description", "features", "language", "code_language"]
+      },
+      "api_docs": {
+        "path": "docs/api_docs.md",
+        "description": "API 文档生成",
+        "variables": ["api_name", "base_url", "auth_type", "endpoints"]
+      },
+      "meeting_notes": {
+        "path": "docs/meeting_notes.md",
+        "description": "会议纪要整理",
+        "variables": ["meeting_title", "date", "attendees", "meeting_notes"]
+      },
+      "weekly_report": {
+        "path": "docs/weekly_report.md",
+        "description": "周报/日报生成",
+        "variables": ["report_type", "name", "department", "date_range", "completed_tasks"]
+      }
+    },
+    "devops": {
+      "k8s": {
+        "path": "devops/k8s.md",
+        "description": "Kubernetes 资源配置",
+        "variables": ["application_description", "app_name", "image", "port", "replicas", "namespace"]
+      },
+      "cicd": {
+        "path": "devops/cicd.md",
+        "description": "CI/CD 流水线配置",
+        "variables": ["project_description", "platform", "language", "framework", "deploy_target"]
+      },
+      "shell_script": {
+        "path": "devops/shell_script.md",
+        "description": "Shell 脚本生成",
+        "variables": ["script_description", "script_name", "os", "arguments", "expected_output"]
+      },
+      "nginx": {
+        "path": "devops/nginx.md",
+        "description": "Nginx 配置生成",
+        "variables": ["application_description", "domain", "backend", "port", "app_type"]
+      }
+    },
+    "email": {
+      "business": {
+        "path": "email/business.md",
+        "description": "商务邮件生成",
+        "variables": ["email_type", "recipient", "subject", "main_content", "call_to_action"]
+      },
+      "notice": {
+        "path": "email/notice.md",
+        "description": "通知邮件生成",
+        "variables": ["notice_type", "audience", "content", "time", "location"]
+      },
+      "ppt_outline": {
+        "path": "email/ppt_outline.md",
+        "description": "PPT 大纲生成",
+        "variables": ["presentation_title", "purpose", "audience", "duration", "key_messages"]
+      }
+    },
+    "project": {
+      "plan": {
+        "path": "project/plan.md",
+        "description": "项目计划制定",
+        "variables": ["project_name", "project_manager", "start_date", "end_date", "project_background"]
+      },
+      "status_report": {
+        "path": "project/status_report.md",
+        "description": "项目状态报告",
+        "variables": ["project_name", "report_period", "pm_name", "report_date"]
+      },
+      "roadmap": {
+        "path": "project/roadmap.md",
+        "description": "产品路线图规划",
+        "variables": ["product_name", "product_stage", "planning_period", "product_vision"]
+      }
+    },
+    "system": {
+      "base": {
+        "path": "system/base.md",
+        "description": "基础通用模板",
+        "variables": ["role", "task", "context", "constraints", "format"]
+      },
+      "role": {
+        "path": "system/role.md",
+        "description": "角色设定模板",
+        "variables": ["role", "expertise", "style", "tone"]
+      }
+    }
+  }
+}

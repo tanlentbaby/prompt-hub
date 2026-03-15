@@ -1,0 +1,109 @@
+{
+  "name": "Prompt Hub Skills",
+  "version": "3.0",
+  "description": "Prompt Hub 快捷命令，支持 37 个模板和扩展能力",
+  "skills": [
+    {
+      "name": "prompt-list",
+      "alias": "pl",
+      "description": "列出所有 Prompt Hub 模板或指定分类",
+      "file": "prompt-list.md",
+      "template": true
+    },
+    {
+      "name": "prompt-search",
+      "alias": "ps",
+      "description": "搜索 Prompt Hub 模板（支持中文关键词）",
+      "file": "prompt-search.md",
+      "template": true
+    },
+    {
+      "name": "prompt-show",
+      "alias": "psh",
+      "description": "查看 Prompt Hub 模板详情和变量",
+      "file": "prompt-show.md",
+      "template": true
+    },
+    {
+      "name": "prompt-fill",
+      "alias": "pf",
+      "description": "填充 Prompt Hub 模板生成最终提示词",
+      "file": "prompt-fill.md",
+      "template": true
+    },
+    {
+      "name": "prompt-add",
+      "alias": "pa",
+      "description": "添加新的提示词模板到 Prompt Hub",
+      "file": "prompt-add.md",
+      "template": true
+    },
+    {
+      "name": "prompt-new",
+      "alias": "pn",
+      "description": "创建新的提示词模板（交互式向导）",
+      "file": "prompt-new.md",
+      "template": true
+    },
+    {
+      "name": "prompt-register",
+      "alias": "pr",
+      "description": "注册模板文件到 Prompt Hub 系统",
+      "file": "prompt-register.md",
+      "template": true
+    },
+    {
+      "name": "prompt-template",
+      "alias": "pt",
+      "description": "模板生成器 - 根据需求自动生成模板",
+      "file": "prompt-template.md",
+      "template": true
+    }
+  ],
+  "templates": {
+    "code_gen": [
+      "sql", "function", "class", "api", "refactor",
+      "unit_test", "code_review", "commit_message", "dockerfile"
+    ],
+    "data_analysis": [
+      "eda", "cleaning", "visualization", "ml_pipeline",
+      "sql_analysis", "excel_formula", "regex", "json_yaml"
+    ],
+    "docs": [
+      "readme", "api_docs", "meeting_notes", "weekly_report"
+    ],
+    "devops": [
+      "k8s", "cicd", "shell_script", "nginx"
+    ],
+    "email": [
+      "business", "notice", "ppt_outline"
+    ],
+    "project": [
+      "plan", "status_report", "roadmap"
+    ],
+    "system": [
+      "base", "role"
+    ],
+    "skills": [
+      "prompt-add", "prompt-new", "prompt-register", "prompt-template"
+    ]
+  },
+  "usage": {
+    "list": "/pl [category]",
+    "search": "/ps <keyword>",
+    "show": "/psh <template_name>",
+    "fill": "/pf <template_name> <var>=\"value\"",
+    "add": "/pa template_name=\"xxx\" category=\"xxx\"",
+    "new": "/pn",
+    "register": "/pr template_file=\"xxx.md\"",
+    "generate": "/pt <requirements>"
+  },
+  "extension": {
+    "script": "add-template.sh",
+    "guide": "EXTENSION_GUIDE.md",
+    "categories": [
+      "code_gen", "data_analysis", "docs", "devops",
+      "email", "project", "system", "skills"
+    ]
+  }
+}
