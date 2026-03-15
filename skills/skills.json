@@ -1,7 +1,7 @@
 {
   "name": "Prompt Hub Skills",
-  "version": "3.0",
-  "description": "Prompt Hub 快捷命令，支持 37 个模板和扩展能力",
+  "version": "4.0",
+  "description": "Prompt Hub 快捷命令，支持 50+ 模板和扩展能力",
   "skills": [
     {
       "name": "prompt-list",
@@ -63,23 +63,45 @@
   "templates": {
     "code_gen": [
       "sql", "function", "class", "api", "refactor",
-      "unit_test", "code_review", "commit_message", "dockerfile"
+      "unit_test", "code_review", "commit_message", "dockerfile",
+      "react_component", "python_script", "database_design"
     ],
     "data_analysis": [
       "eda", "cleaning", "visualization", "ml_pipeline",
       "sql_analysis", "excel_formula", "regex", "json_yaml"
     ],
     "docs": [
-      "readme", "api_docs", "meeting_notes", "weekly_report"
+      "readme", "api_docs", "meeting_notes", "weekly_report", "faq"
     ],
     "devops": [
-      "k8s", "cicd", "shell_script", "nginx"
+      "k8s", "cicd", "shell_script", "nginx", "git"
     ],
     "email": [
       "business", "notice", "ppt_outline"
     ],
     "project": [
-      "plan", "status_report", "roadmap"
+      "plan", "status_report", "roadmap", "prd"
+    ],
+    "marketing": [
+      "seo", "social_media"
+    ],
+    "education": [
+      "study_plan"
+    ],
+    "hr": [
+      "interview_questions"
+    ],
+    "legal": [
+      "contract"
+    ],
+    "career": [
+      "resume", "performance_review"
+    ],
+    "general": [
+      "qa", "translation", "text_processing"
+    ],
+    "security": [
+      "code_audit"
     ],
     "system": [
       "base", "role"
@@ -103,7 +125,13 @@
     "guide": "EXTENSION_GUIDE.md",
     "categories": [
       "code_gen", "data_analysis", "docs", "devops",
-      "email", "project", "system", "skills"
+      "email", "project", "marketing", "education",
+      "hr", "legal", "career", "general", "security", "system", "skills"
     ]
+  },
+  "stats": {
+    "total_templates": 52,
+    "total_categories": 15,
+    "skills_tools": 8
   }
 }
