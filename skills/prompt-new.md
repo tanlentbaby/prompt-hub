@@ -1,6 +1,5 @@
 ---
 name: prompt-new
-alias: pn
 description: 创建新的提示词模板（交互式）
 ---
 

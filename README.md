@@ -1,11 +1,11 @@
 # Prompt Hub - 提示词模板管理系统
 
-> **你的 AI 提示词资产库** - 结构化管理 52+ 个提示词模板，支持随时扩展
+> **你的 AI 提示词资产库** - 结构化管理 70+ 个提示词模板，支持随时扩展
 
-[![模板数量](https://img.shields.io/badge/模板-52%2B-blue)](#模板列表)
-[![分类数量](https://img.shields.io/badge/分类-15-green)](#分类目录)
-[![Skills工具](https://img.shields.io/badge/Skills-8-orange)](#方式四使用-skills-快捷命令)
-[![版本](https://img.shields.io/badge/版本-3.0-red)](#更新日志)
+[![模板数量](https://img.shields.io/badge/模板-70%2B-blue)](#模板列表)
+[![分类数量](https://img.shields.io/badge/分类-18-green)](#分类目录)
+[![Skills工具](https://img.shields.io/badge/Skills-9-orange)](#方式四使用-skills-快捷命令)
+[![版本](https://img.shields.io/badge/版本-4.0-red)](#更新日志)
 
 ---
 
@@ -82,7 +82,7 @@ prompt-hub/
 │   ├── security/              # 安全审计（1 个）
 │   └── system/                # 系统（2 个）
 │
-├── Skills 工具（8 个）
+├── Skills 工具（9 个）
 │   ├── prompt-list.md         # /prompt-list - 列出模板
 │   ├── prompt-search.md       # /prompt-search - 搜索模板
 │   ├── prompt-show.md         # /prompt-show - 查看详情
@@ -90,7 +90,8 @@ prompt-hub/
 │   ├── prompt-add.md          # /prompt-add - 添加模板
 │   ├── prompt-new.md          # /prompt-new - 创建模板
 │   ├── prompt-register.md     # /prompt-register - 注册模板
-│   └── prompt-template.md     # /prompt-template - 模板生成器
+│   ├── prompt-template.md     # /prompt-template - 模板生成器
+│   └── prompt-delete.md       # /prompt-delete - 删除模板
 │
 ├── Agent 定义
 │   ├── prompt_hub_agent.md    # Prompt Hub 代理
@@ -137,6 +138,15 @@ python prompt_manager.py search --in variable language
 # 7. 查看模板详情
 python prompt_manager.py show code_gen/sql
 python prompt_manager.py show devops/k8s
+
+# 8. 删除模板（需确认）
+python prompt_manager.py delete test_category/old_template
+
+# 9. 强制删除（跳过确认）
+python prompt_manager.py delete test_category/old_template -f
+
+# 10. 删除整个分类
+python prompt_manager.py delete test_category --category
 ```
 
 ### 方式二：Python API
@@ -201,6 +211,7 @@ code code_gen/sql.md
 /prompt-new                                      # 交互式创建
 /prompt-register template_file="xxx.md"         # 注册模板
 /prompt-template "我需要一个 XXX 模板"          # AI 生成模板
+/prompt-delete template_name="xxx"              # 删除模板
 ```
 
 ### 方式五：使用 Agent
@@ -232,10 +243,15 @@ cat EXTENSION_GUIDE.md
 |------|--------|------|
 | `code_gen` | 12 | 代码生成：函数、类、API、SQL、测试、重构等 |
 | `data_analysis` | 8 | 数据分析：EDA、清洗、可视化、ML管道 |
-| `docs` | 5 | 文档：README、API文档、会议纪要、周报、FAQ |
-| `devops` | 5 | DevOps：K8s、CI/CD、Shell、Nginx、Git |
+| `docs` | 5 | 文档：README、API文档、会议纪要、周报、ADR |
+| `devops` | 5 | DevOps：K8s、CI/CD、Shell、Nginx、部署架构 |
 | `email` | 3 | 邮件文书：商务邮件、通知、PPT大纲 |
 | `project` | 4 | 项目管理：计划、状态报告、路线图、PRD |
+| `architecture` | 5 | **架构设计：服务概览、架构设计、领域设计、威胁建模、PRD** |
+| `task` | 4 | **任务流程：研发任务、重构任务、文档设计、问题分析** |
+| `ai_command` | 4 | **AI命令：分析设计、优化设计、总结文件夹、审查文件夹** |
+| `testing` | 1 | **测试：测试策略** |
+| `storage` | 1 | **存储：数据库结构** |
 | `marketing` | 2 | 营销推广：SEO、社交媒体 |
 | `education` | 1 | 教育学习：学习计划 |
 | `hr` | 1 | 人力资源：面试问题 |
@@ -245,7 +261,7 @@ cat EXTENSION_GUIDE.md
 | `security` | 1 | 安全审计：代码审计 |
 | `system` | 2 | 系统：基础模板、角色设定 |
 
-**总计：52 个模板，15 个分类，8 个 Skills 工具**
+**总计：70+ 个模板，18 个分类，9 个 Skills 工具**
 
 ---
 
@@ -350,6 +366,46 @@ cat EXTENSION_GUIDE.md
 | security | `code_audit` | 代码安全审计 |
 | system | `base`, `role` | 基础模板、角色设定 |
 
+### 架构设计（architecture）- 5 个
+
+| 模板 | 描述 | 主要变量 |
+|------|------|----------|
+| `service_overview` | 微服务概览文档 | serviceName, architect, serviceDescription |
+| `architecture` | 微服务架构设计文档 | serviceName, techStack, architectureType |
+| `domain_design` | 领域驱动设计概览 | serviceName, domainName, boundedContexts |
+| `threat_model` | STRIDE 威胁建模 | serviceName, securityEngineer, threatLevel |
+| `prd` | 产品需求文档（PRD） | serviceName, productManager, coreFeatures |
+
+### 任务流程（task）- 4 个
+
+| 模板 | 描述 | 主要变量 |
+|------|------|----------|
+| `story_develop` | 研发任务 4 步流程 | taskName, requirementDescription, techConstraints |
+| `refactoring` | 重构任务 5 步流程 | taskName, refactoringGoals, focusAreas |
+| `document_design` | 文档设计任务 3 步流程 | taskName, researchGoal, relatedDocuments |
+| `problem_analysis` | 问题分析任务 4 步流程 | taskName, problemDescription, codePaths |
+
+### AI 命令（ai_command）- 4 个
+
+| 模板 | 描述 | 主要变量 |
+|------|------|----------|
+| `analyze_design` | 分析设计文档 | fileName, diagramType, relatedFiles |
+| `optimize_design` | 优化设计方案 | fileName, diagramType, optimizationGoals |
+| `summarize_folder` | 总结文件夹内容 | folderName, folderPath, selectedFiles |
+| `review_folder` | 审查文件夹 | folderName, folderPath, reviewType |
+
+### 测试（testing）- 1 个
+
+| 模板 | 描述 | 主要变量 |
+|------|------|----------|
+| `test_strategy` | 测试策略文档 | serviceName, tester, unitTestPercentage |
+
+### 存储（storage）- 1 个
+
+| 模板 | 描述 | 主要变量 |
+|------|------|----------|
+| `schema` | 数据库结构文档 | serviceName, dba, databaseType |
+
 ---
 
 ## 扩展指南
@@ -426,9 +482,10 @@ Python 管理器，提供：
 
 ### 3. Skills 工具
 
-8 个 Claude Code Skills 快捷命令，用于：
+9 个 Claude Code Skills 快捷命令，用于：
 - 列出、搜索、查看、填充模板
 - 添加、创建、注册新模板
+- 删除不需要的模板
 - AI 辅助生成模板
 
 ### 4. Agent
@@ -440,6 +497,18 @@ Python 管理器，提供：
 ---
 
 ## 更新日志
+
+### v4.1
+- **新增删除功能**
+- 新增 `prompt-delete` Skill - 删除模板
+- CLI 支持 `delete` 命令 - 删除模板或分类
+- 支持交互确认和强制删除模式
+
+### v4.0
+- **整合 vault-microservice 模板**
+- 新增 18 个模板（架构设计 5 个、任务流程 4 个、AI 命令 4 个、测试 1 个、存储 1 个、部署 1 个）
+- 新增 3 个分类：`architecture`、`task`、`ai_command`
+- 扩展分类：`testing`、`storage`、`devops`、`docs`
 
 ### v3.0
 - 新增 19 个模板

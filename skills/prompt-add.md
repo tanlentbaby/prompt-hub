@@ -1,6 +1,5 @@
 ---
 name: prompt-add
-alias: pa
 description: 添加新的提示词模板到 Prompt Hub
 ---
 
@@ -80,7 +79,7 @@ description: 添加新的提示词模板到 Prompt Hub
 
 ```bash
 # 使用模板添加
-/pa template_name="xxx" category="xxx" description="xxx"
+/prompt-add template_name="xxx" category="xxx" description="xxx"
 
 # 或自然语言
 帮我添加一个 xxx 模板，用于 xxx

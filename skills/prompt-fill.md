@@ -1,6 +1,5 @@
 ---
 name: prompt-fill
-alias: pf
 description: 填充 Prompt Hub 模板生成提示词
 ---
 
@@ -843,15 +842,15 @@ server {
 
 ## 未找到模板：{{ template_name }}
 
-**使用 `/pl` 浏览所有模板**
+**使用 `/prompt-list` 浏览所有模板**
 
-或 **`/ps 关键词`** 搜索模板
+或 **`/prompt-search 关键词`** 搜索模板
 
 {%- endif %}
 
 ---
 
 **还需要：**
-- `/psh <模板名>` - 查看模板详情
-- `/ps 关键词` - 搜索模板
-- `/pl` - 浏览所有模板
+- `/prompt-show <模板名>` - 查看模板详情
+- `/prompt-search 关键词` - 搜索模板
+- `/prompt-list` - 浏览所有模板

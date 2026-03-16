@@ -1,6 +1,5 @@
 ---
 name: prompt-list
-alias: pl
 description: 列出所有 Prompt Hub 模板或指定分类
 ---
 
@@ -75,14 +74,17 @@ prompt-add, prompt-new, prompt-register, prompt-template
 ---
 
 **使用方式：**
-- `/pl <分类>` - 查看指定分类
-- `/psh <模板名>` - 查看模板详情
-- `/pf <模板名> 变量="值"` - 填充模板
-- `/ps 关键词` - 搜索模板
+- `/prompt-list <分类>` - 查看指定分类
+- `/prompt-show <模板名>` - 查看模板详情
+- `/prompt-fill <模板名> 变量="值"` - 填充模板
+- `/prompt-search 关键词` - 搜索模板
 
 **添加新模板：**
-- `/pa` - 添加模板
-- `/pn` - 创建新模板（交互式）
-- `/pt` - 模板生成器
+- `/prompt-add` - 添加模板
+- `/prompt-new` - 创建新模板（交互式）
+- `/prompt-template` - 模板生成器
+
+**删除模板：**
+- `/prompt-delete <模板名>` - 删除模板
 
 {%- endif %}

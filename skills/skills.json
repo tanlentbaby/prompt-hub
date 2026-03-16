@@ -1,62 +1,60 @@
 {
   "name": "Prompt Hub Skills",
-  "version": "4.0",
-  "description": "Prompt Hub 快捷命令，支持 50+ 模板和扩展能力",
+  "version": "4.1",
+  "description": "Prompt Hub 快捷命令，支持 70+ 模板和扩展能力",
   "skills": [
     {
       "name": "prompt-list",
-      "alias": "pl",
       "description": "列出所有 Prompt Hub 模板或指定分类",
       "file": "prompt-list.md",
       "template": true
     },
     {
       "name": "prompt-search",
-      "alias": "ps",
       "description": "搜索 Prompt Hub 模板（支持中文关键词）",
       "file": "prompt-search.md",
       "template": true
     },
     {
       "name": "prompt-show",
-      "alias": "psh",
       "description": "查看 Prompt Hub 模板详情和变量",
       "file": "prompt-show.md",
       "template": true
     },
     {
       "name": "prompt-fill",
-      "alias": "pf",
       "description": "填充 Prompt Hub 模板生成最终提示词",
       "file": "prompt-fill.md",
       "template": true
     },
     {
       "name": "prompt-add",
-      "alias": "pa",
       "description": "添加新的提示词模板到 Prompt Hub",
       "file": "prompt-add.md",
       "template": true
     },
     {
       "name": "prompt-new",
-      "alias": "pn",
       "description": "创建新的提示词模板（交互式向导）",
       "file": "prompt-new.md",
       "template": true
     },
     {
       "name": "prompt-register",
-      "alias": "pr",
       "description": "注册模板文件到 Prompt Hub 系统",
       "file": "prompt-register.md",
       "template": true
     },
     {
       "name": "prompt-template",
-      "alias": "pt",
       "description": "模板生成器 - 根据需求自动生成模板",
       "file": "prompt-template.md",
+      "template": true
+    },
+    {
+      "name": "prompt-delete",
+      "description": "删除 Prompt Hub 中的提示词模板",
+      "file": "prompt-delete.md",
       "template": true
     }
   ],
@@ -107,18 +105,19 @@
       "base", "role"
     ],
     "skills": [
-      "prompt-add", "prompt-new", "prompt-register", "prompt-template"
+      "prompt-add", "prompt-new", "prompt-register", "prompt-template", "prompt-delete"
     ]
   },
   "usage": {
-    "list": "/pl [category]",
-    "search": "/ps <keyword>",
-    "show": "/psh <template_name>",
-    "fill": "/pf <template_name> <var>=\"value\"",
-    "add": "/pa template_name=\"xxx\" category=\"xxx\"",
-    "new": "/pn",
-    "register": "/pr template_file=\"xxx.md\"",
-    "generate": "/pt <requirements>"
+    "list": "/prompt-list [category]",
+    "search": "/prompt-search <keyword>",
+    "show": "/prompt-show <template_name>",
+    "fill": "/prompt-fill <template_name> <var>=\"value\"",
+    "add": "/prompt-add template_name=\"xxx\" category=\"xxx\"",
+    "new": "/prompt-new",
+    "register": "/prompt-register template_file=\"xxx.md\"",
+    "generate": "/prompt-template <requirements>",
+    "delete": "/prompt-delete <template_name> [--force]"
   },
   "extension": {
     "script": "add-template.sh",
@@ -130,8 +129,8 @@
     ]
   },
   "stats": {
-    "total_templates": 52,
-    "total_categories": 15,
-    "skills_tools": 8
+    "total_templates": 70,
+    "total_categories": 18,
+    "skills_tools": 9
   }
 }

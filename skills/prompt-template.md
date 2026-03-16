@@ -1,6 +1,5 @@
 ---
 name: prompt-template
-alias: pt
 description: 模板生成器 - 根据需求自动生成提示词模板
 ---
 
@@ -92,7 +91,7 @@ description: 模板生成器 - 根据需求自动生成提示词模板
 ### 使用示例
 
 ```bash
-/pf {{ template_name }} var1="值 1" var2="值 2"
+/prompt-fill {{ template_name }} var1="值 1" var2="值 2"
 ```
 
 ### Skills 配置更新
@@ -105,7 +104,7 @@ description: 模板生成器 - 根据需求自动生成提示词模板
 
 ```bash
 # 描述你的需求
-/pt 我需要一个 XXX 模板，用于 XXX
+/prompt-template 我需要一个 XXX 模板，用于 XXX
 
 # 或自然语言
 帮我创建一个模板，可以 XXX

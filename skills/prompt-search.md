@@ -1,6 +1,5 @@
 ---
 name: prompt-search
-alias: ps
 description: 搜索 Prompt Hub 模板
 ---
 
@@ -11,11 +10,11 @@ description: 搜索 Prompt Hub 模板
 {%- if keyword == "" or keyword == "all" %}
 
 请输入关键词进行搜索，例如：
-- `/ps SQL` - 搜索 SQL 相关
-- `/ps 邮件` - 搜索邮件相关
-- `/ps K8s` - 搜索 K8s 相关
+- `/prompt-search SQL` - 搜索 SQL 相关
+- `/prompt-search 邮件` - 搜索邮件相关
+- `/prompt-search K8s` - 搜索 K8s 相关
 
-或使用 `/pl` 浏览所有模板
+或使用 `/prompt-list` 浏览所有模板
 
 {%- endif %}
 
@@ -25,11 +24,11 @@ description: 搜索 Prompt Hub 模板
 
 1. **code_gen/sql** - SQL 查询生成
    - 变量：query_description, db_type, table_schema
-   - 使用：`/pf sql query="查询描述" db_type="MySQL"`
+   - 使用：`/prompt-fill sql query="查询描述" db_type="MySQL"`
 
 2. **data_analysis/sql_analysis** - SQL 数据分析
    - 变量：analysis_goal, db_type, tables
-   - 使用：`/pf sql_analysis analysis_goal="分析目标"`
+   - 使用：`/prompt-fill sql_analysis analysis_goal="分析目标"`
 
 {%- endif %}
 
@@ -39,11 +38,11 @@ description: 搜索 Prompt Hub 模板
 
 1. **email/business** - 商务邮件生成
    - 变量：email_type, recipient, subject, content
-   - 使用：`/pf business email_type="合作" recipient="张总"`
+   - 使用：`/prompt-fill business email_type="合作" recipient="张总"`
 
 2. **email/notice** - 通知邮件生成
    - 变量：notice_type, audience, content
-   - 使用：`/pf notice notice_type="放假通知" audience="全体员工"`
+   - 使用：`/prompt-fill notice notice_type="放假通知" audience="全体员工"`
 
 {%- endif %}
 
@@ -53,19 +52,19 @@ description: 搜索 Prompt Hub 模板
 
 1. **devops/k8s** - Kubernetes 资源配置
    - 变量：app_name, image, port, replicas
-   - 使用：`/pf k8s app_name="nginx" image="nginx:1.24"`
+   - 使用：`/prompt-fill k8s app_name="nginx" image="nginx:1.24"`
 
 2. **code_gen/dockerfile** - Dockerfile 生成
    - 变量：language, framework, port
-   - 使用：`/pf dockerfile language="Python" framework="Flask"`
+   - 使用：`/prompt-fill dockerfile language="Python" framework="Flask"`
 
 3. **devops/nginx** - Nginx 配置生成
    - 变量：domain, backend, port
-   - 使用：`/pf nginx domain="example.com" backend="http://localhost:3000"`
+   - 使用：`/prompt-fill nginx domain="example.com" backend="http://localhost:3000"`
 
 4. **devops/cicd** - CI/CD 流水线配置
    - 变量：platform, language, deploy_target
-   - 使用：`/pf cicd platform="GitHub Actions"`
+   - 使用：`/prompt-fill cicd platform="GitHub Actions"`
 
 {%- endif %}
 
@@ -75,7 +74,7 @@ description: 搜索 Prompt Hub 模板
 
 1. **docs/meeting_notes** - 会议纪要整理
    - 变量：title, date, attendees, notes
-   - 使用：`/pf meeting_notes title="周会" date="2026-03-15"`
+   - 使用：`/prompt-fill meeting_notes title="周会" date="2026-03-15"`
 
 {%- endif %}
 
@@ -223,6 +222,6 @@ description: 搜索 Prompt Hub 模板
 ---
 
 **下一步操作：**
-- `/psh <模板名>` - 查看模板详情
-- `/pf <模板名> 变量="值"` - 填充模板
-- `/pl` - 浏览所有模板
+- `/prompt-show <模板名>` - 查看模板详情
+- `/prompt-fill <模板名> 变量="值"` - 填充模板
+- `/prompt-list` - 浏览所有模板

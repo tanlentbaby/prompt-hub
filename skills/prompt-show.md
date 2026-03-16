@@ -1,6 +1,5 @@
 ---
 name: prompt-show
-alias: psh
 description: 查看 Prompt Hub 模板详情
 ---
 
@@ -19,7 +18,7 @@ description: 查看 Prompt Hub 模板详情
 | db_type | ❌ | MySQL | 数据库类型 |
 | table_schema | ✅ | - | 表结构 |
 
-**使用**: `/pf sql query="查询" db_type="MySQL" table_schema="表结构"`
+**使用**: `/prompt-fill sql query="查询" db_type="MySQL" table_schema="表结构"`
 
 {%- elsif template_name == "function" %}
 
@@ -34,7 +33,7 @@ description: 查看 Prompt Hub 模板详情
 | function_name | ✅ | - | 函数名 |
 | description | ✅ | - | 功能描述 |
 
-**使用**: `/pf function language="Python" function_name="parse" description="解析数据"`
+**使用**: `/prompt-fill function language="Python" function_name="parse" description="解析数据"`
 
 {%- elsif template_name == "k8s" %}
 
@@ -50,7 +49,7 @@ description: 查看 Prompt Hub 模板详情
 | port | ❌ | 80 | 容器端口 |
 | replicas | ❌ | 3 | 副本数 |
 
-**使用**: `/pf k8s app_name="nginx" image="nginx:1.24"`
+**使用**: `/prompt-fill k8s app_name="nginx" image="nginx:1.24"`
 
 {%- elsif template_name == "meeting_notes" %}
 
@@ -66,7 +65,7 @@ description: 查看 Prompt Hub 模板详情
 | attendees | ✅ | - | 参会人员 |
 | notes | ❌ | - | 原始记录 |
 
-**使用**: `/pf meeting_notes title="周会" date="2026-03-15" attendees="张三，李四"`
+**使用**: `/prompt-fill meeting_notes title="周会" date="2026-03-15" attendees="张三，李四"`
 
 {%- elsif template_name == "plan" %}
 
@@ -83,7 +82,7 @@ description: 查看 Prompt Hub 模板详情
 | project_manager | ❌ | - | 负责人 |
 | background | ❌ | - | 背景 |
 
-**使用**: `/pf plan project_name="ERP" start_date="2026-04-01" end_date="2026-09-30"`
+**使用**: `/prompt-fill plan project_name="ERP" start_date="2026-04-01" end_date="2026-09-30"`
 
 {%- elsif template_name == "business" %}
 
@@ -99,7 +98,7 @@ description: 查看 Prompt Hub 模板详情
 | subject | ✅ | - | 主题 |
 | content | ✅ | - | 正文要点 |
 
-**使用**: `/pf business email_type="合作" recipient="张总" subject="合作邀请"`
+**使用**: `/prompt-fill business email_type="合作" recipient="张总" subject="合作邀请"`
 
 {%- elsif template_name == "readme" %}
 
@@ -114,7 +113,7 @@ description: 查看 Prompt Hub 模板详情
 | description | ✅ | - | 项目描述 |
 | features | ✅ | - | 主要功能 |
 
-**使用**: `/pf readme project_name="XXX" description="描述" features="功能列表"`
+**使用**: `/prompt-fill readme project_name="XXX" description="描述" features="功能列表"`
 
 {%- elsif template_name == "nginx" %}
 
@@ -129,7 +128,7 @@ description: 查看 Prompt Hub 模板详情
 | backend | ✅ | - | 后端服务 |
 | port | ❌ | 80 | 端口 |
 
-**使用**: `/pf nginx domain="example.com" backend="http://localhost:3000"`
+**使用**: `/prompt-fill nginx domain="example.com" backend="http://localhost:3000"`
 
 {%- elsif template_name == "unit_test" %}
 
@@ -144,7 +143,7 @@ description: 查看 Prompt Hub 模板详情
 | language | ❌ | Python | 语言 |
 | test_framework | ❌ | pytest | 测试框架 |
 
-**使用**: `/pf unit_test code="..." language="Python"`
+**使用**: `/prompt-fill unit_test code="..." language="Python"`
 
 {%- elsif template_name == "dockerfile" %}
 
@@ -159,7 +158,7 @@ description: 查看 Prompt Hub 模板详情
 | framework | ❌ | - | 框架 |
 | port | ❌ | 5000 | 端口 |
 
-**使用**: `/pf dockerfile language="Python" framework="Flask" port="5000"`
+**使用**: `/prompt-fill dockerfile language="Python" framework="Flask" port="5000"`
 
 {%- elsif template_name == "weekly_report" %}
 
@@ -175,7 +174,7 @@ description: 查看 Prompt Hub 模板详情
 | department | ✅ | - | 部门 |
 | completed_tasks | ✅ | - | 完成的工作 |
 
-**使用**: `/pf weekly_report report_type="周报" name="张三" completed_tasks="..."`
+**使用**: `/prompt-fill weekly_report report_type="周报" name="张三" completed_tasks="..."`
 
 {%- elsif template_name == "regex" %}
 
@@ -190,7 +189,7 @@ description: 查看 Prompt Hub 模板详情
 | input_example | ✅ | - | 输入示例 |
 | language | ❌ | Python | 语言 |
 
-**使用**: `/pf regex task_description="匹配邮箱" input_example="test@example.com"`
+**使用**: `/prompt-fill regex task_description="匹配邮箱" input_example="test@example.com"`
 
 {%- elsif template_name == "cicd" %}
 
@@ -205,7 +204,7 @@ description: 查看 Prompt Hub 模板详情
 | language | ❌ | Python | 语言 |
 | deploy_target | ✅ | - | 部署目标 |
 
-**使用**: `/pf cicd platform="GitHub Actions" deploy_target="AWS"`
+**使用**: `/prompt-fill cicd platform="GitHub Actions" deploy_target="AWS"`
 
 {%- elsif template_name == "shell_script" %}
 
@@ -219,7 +218,7 @@ description: 查看 Prompt Hub 模板详情
 | script_description | ✅ | - | 脚本描述 |
 | os | ❌ | Linux | 操作系统 |
 
-**使用**: `/pf shell_script script_description="备份脚本" os="Linux"`
+**使用**: `/prompt-fill shell_script script_description="备份脚本" os="Linux"`
 
 {%- elsif template_name == "excel_formula" %}
 
@@ -233,7 +232,7 @@ description: 查看 Prompt Hub 模板详情
 | problem_description | ✅ | - | 问题描述 |
 | data_structure | ✅ | - | 数据结构 |
 
-**使用**: `/pf excel_formula problem_description="求和" data_structure="A1:A10"`
+**使用**: `/prompt-fill excel_formula problem_description="求和" data_structure="A1:A10"`
 
 {%- elsif template_name == "json_yaml" %}
 
@@ -247,7 +246,7 @@ description: 查看 Prompt Hub 模板详情
 | task_type | ❌ | JSON 转 YAML | 任务类型 |
 | input_data | ✅ | - | 输入数据 |
 
-**使用**: `/pf json_yaml task_type="JSON 转 YAML" input_data="..."`
+**使用**: `/prompt-fill json_yaml task_type="JSON 转 YAML" input_data="..."`
 
 {%- elsif template_name == "eda" %}
 
@@ -262,7 +261,7 @@ description: 查看 Prompt Hub 模板详情
 | columns | ✅ | - | 数据列 |
 | analysis_goals | ✅ | - | 分析目标 |
 
-**使用**: `/pf eda data_source="CSV" columns="age,income" analysis_goals="分布分析"`
+**使用**: `/prompt-fill eda data_source="CSV" columns="age,income" analysis_goals="分布分析"`
 
 {%- elsif template_name == "cleaning" %}
 
@@ -276,7 +275,7 @@ description: 查看 Prompt Hub 模板详情
 | data_issues | ✅ | - | 数据问题 |
 | cleaning_rules | ✅ | - | 清洗规则 |
 
-**使用**: `/pf cleaning data_issues="缺失值" cleaning_rules="填充均值"`
+**使用**: `/prompt-fill cleaning data_issues="缺失值" cleaning_rules="填充均值"`
 
 {%- elsif template_name == "visualization" %}
 
@@ -291,7 +290,7 @@ description: 查看 Prompt Hub 模板详情
 | x_axis | ✅ | - | X 轴 |
 | y_axis | ✅ | - | Y 轴 |
 
-**使用**: `/pf visualization chart_type="折线图" x_axis="日期" y_axis="销售额"`
+**使用**: `/prompt-fill visualization chart_type="折线图" x_axis="日期" y_axis="销售额"`
 
 {%- elsif template_name == "ml_pipeline" %}
 
@@ -306,7 +305,7 @@ description: 查看 Prompt Hub 模板详情
 | features | ✅ | - | 特征 |
 | target | ✅ | - | 目标变量 |
 
-**使用**: `/pf ml_pipeline task_type="分类" features="age,income" target="label"`
+**使用**: `/prompt-fill ml_pipeline task_type="分类" features="age,income" target="label"`
 
 {%- elsif template_name == "sql_analysis" %}
 
@@ -321,7 +320,7 @@ description: 查看 Prompt Hub 模板详情
 | db_type | ❌ | MySQL | 数据库类型 |
 | tables | ✅ | - | 数据表 |
 
-**使用**: `/pf sql_analysis analysis_goal="销售分析" tables="orders,users"`
+**使用**: `/prompt-fill sql_analysis analysis_goal="销售分析" tables="orders,users"`
 
 {%- elsif template_name == "api_docs" %}
 
@@ -336,7 +335,7 @@ description: 查看 Prompt Hub 模板详情
 | base_url | ✅ | - | 基础 URL |
 | endpoints | ✅ | - | 端点列表 |
 
-**使用**: `/pf api_docs api_name="User API" base_url="/api/v1" endpoints="GET /users"`
+**使用**: `/prompt-fill api_docs api_name="User API" base_url="/api/v1" endpoints="GET /users"`
 
 {%- elsif template_name == "ppt_outline" %}
 
@@ -351,7 +350,7 @@ description: 查看 Prompt Hub 模板详情
 | purpose | ✅ | - | 演示目的 |
 | audience | ✅ | - | 受众 |
 
-**使用**: `/pf ppt_outline presentation_title="产品介绍" purpose="销售" audience="客户"`
+**使用**: `/prompt-fill ppt_outline presentation_title="产品介绍" purpose="销售" audience="客户"`
 
 {%- elsif template_name == "status_report" %}
 
@@ -365,7 +364,7 @@ description: 查看 Prompt Hub 模板详情
 | project_name | ✅ | - | 项目名称 |
 | report_period | ✅ | - | 报告周期 |
 
-**使用**: `/pf status_report project_name="ERP" report_period="2026-W10"`
+**使用**: `/prompt-fill status_report project_name="ERP" report_period="2026-W10"`
 
 {%- elsif template_name == "roadmap" %}
 
@@ -380,7 +379,7 @@ description: 查看 Prompt Hub 模板详情
 | planning_period | ✅ | - | 规划周期 |
 | vision | ✅ | - | 愿景 |
 
-**使用**: `/pf roadmap product_name="SaaS" planning_period="2026" vision="成为领先平台"`
+**使用**: `/prompt-fill roadmap product_name="SaaS" planning_period="2026" vision="成为领先平台"`
 
 {%- elsif template_name == "notice" %}
 
@@ -395,7 +394,7 @@ description: 查看 Prompt Hub 模板详情
 | audience | ✅ | - | 受众 |
 | content | ✅ | - | 内容 |
 
-**使用**: `/pf notice notice_type="放假通知" audience="全体员工" content="春节放假..."`
+**使用**: `/prompt-fill notice notice_type="放假通知" audience="全体员工" content="春节放假..."`
 
 {%- elsif template_name == "class" %}
 
@@ -410,7 +409,7 @@ description: 查看 Prompt Hub 模板详情
 | class_name | ✅ | - | 类名 |
 | description | ✅ | - | 功能描述 |
 
-**使用**: `/pf class language="Python" class_name="UserService" description="用户服务"`
+**使用**: `/prompt-fill class language="Python" class_name="UserService" description="用户服务"`
 
 {%- elsif template_name == "api" %}
 
@@ -425,7 +424,7 @@ description: 查看 Prompt Hub 模板详情
 | endpoints | ✅ | - | 端点列表 |
 | models | ✅ | - | 数据模型 |
 
-**使用**: `/pf api framework="FastAPI" endpoints="GET /users" models="User"`
+**使用**: `/prompt-fill api framework="FastAPI" endpoints="GET /users" models="User"`
 
 {%- elsif template_name == "refactor" %}
 
@@ -440,7 +439,7 @@ description: 查看 Prompt Hub 模板详情
 | issues | ✅ | - | 发现的问题 |
 | goals | ✅ | - | 重构目标 |
 
-**使用**: `/pf refactor code="..." issues="重复代码" goals="提高可维护性"`
+**使用**: `/prompt-fill refactor code="..." issues="重复代码" goals="提高可维护性"`
 
 {%- elsif template_name == "code_review" %}
 
@@ -454,7 +453,7 @@ description: 查看 Prompt Hub 模板详情
 | code | ✅ | - | 审查代码 |
 | language | ❌ | Python | 语言 |
 
-**使用**: `/pf code_review code="..." language="Python"`
+**使用**: `/prompt-fill code_review code="..." language="Python"`
 
 {%- elsif template_name == "commit_message" %}
 
@@ -468,7 +467,7 @@ description: 查看 Prompt Hub 模板详情
 | changes_description | ✅ | - | 变更描述 |
 | issue | ❌ | - | 关联 Issue |
 
-**使用**: `/pf commit_message changes_description="修复登录 bug"`
+**使用**: `/prompt-fill commit_message changes_description="修复登录 bug"`
 
 {%- elsif template_name == "base" %}
 
@@ -484,7 +483,7 @@ description: 查看 Prompt Hub 模板详情
 | context | ❌ | - | 上下文 |
 | constraints | ❌ | - | 约束 |
 
-**使用**: `/pf base role="专家" task="任务描述"`
+**使用**: `/prompt-fill base role="专家" task="任务描述"`
 
 {%- elsif template_name == "role" %}
 
@@ -500,7 +499,7 @@ description: 查看 Prompt Hub 模板详情
 | style | ❌ | - | 风格 |
 | tone | ❌ | - | 语气 |
 
-**使用**: `/pf role role="医生" expertise="内科" style="专业" tone="温和"`
+**使用**: `/prompt-fill role role="医生" expertise="内科" style="专业" tone="温和"`
 
 {%- else %}
 
@@ -518,12 +517,12 @@ description: 查看 Prompt Hub 模板详情
 | project | plan, status_report, roadmap |
 | system | base, role |
 
-**使用 `/pl` 浏览所有模板**
+**使用 `/prompt-list` 浏览所有模板**
 {%- endif %}
 
 ---
 
 **下一步操作：**
-- `/pf <模板名> 变量="值"` - 填充此模板
-- `/ps 关键词` - 搜索其他模板
-- `/pl` - 浏览所有模板
+- `/prompt-fill <模板名> 变量="值"` - 填充此模板
+- `/prompt-search 关键词` - 搜索其他模板
+- `/prompt-list` - 浏览所有模板

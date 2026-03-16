@@ -1,6 +1,5 @@
 ---
 name: prompt-register
-alias: pr
 description: 注册模板到 Prompt Hub 系统
 ---
 
@@ -62,7 +61,7 @@ cat {{ template_file }}
 |------|------|--------|------|
 | ... | ... | ... | ... |
 
-**使用**: `/pf {{ template_name }} 变量="值"`
+**使用**: `/prompt-fill {{ template_name }} 变量="值"`
 ```
 
 ### 5. 更新 prompt-fill.md
@@ -92,9 +91,9 @@ cat {{ template_file }}
 注册完成后：
 
 1. ✅ 模板文件存在于 `{{ category }}/{{ template_name }}.md`
-2. ✅ `/psh {{ template_name }}` 可以查看详情
-3. ✅ `/pf {{ template_name }}` 可以填充
-4. ✅ `/ps 关键词` 可以搜索到
+2. ✅ `/prompt-show {{ template_name }}` 可以查看详情
+3. ✅ `/prompt-fill {{ template_name }}` 可以填充
+4. ✅ `/prompt-search 关键词` 可以搜索到
 
 ---
 
@@ -102,10 +101,10 @@ cat {{ template_file }}
 
 ```bash
 # 完整注册
-/pr template_name="xxx" category="xxx" description="xxx" template_file="xxx.md"
+/prompt-register template_name="xxx" category="xxx" description="xxx" template_file="xxx.md"
 
 # 简化（自动检测）
-/pr xxx.md
+/prompt-register xxx.md
 ```
 
 ---
