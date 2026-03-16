@@ -26,10 +26,10 @@
 
 ```bash
 # 在 Claude Code 中直接使用
-/pl                    # 列出所有模板
-/ps SQL               # 搜索模板
-/psh sql              # 查看详情
-/pf sql query="查询订单" db_type="MySQL"  # 填充使用
+/prompt-list                    # 列出所有模板
+/prompt-search SQL              # 搜索模板
+/prompt-show sql                # 查看详情
+/prompt-fill sql query="查询订单" db_type="MySQL"  # 填充使用
 ```
 
 ### 方式二：命令行工具
@@ -83,14 +83,14 @@ prompt-hub/
 │   └── system/                # 系统（2 个）
 │
 ├── Skills 工具（8 个）
-│   ├── prompt-list.md         # /pl - 列出模板
-│   ├── prompt-search.md       # /ps - 搜索模板
-│   ├── prompt-show.md         # /psh - 查看详情
-│   ├── prompt-fill.md         # /pf - 填充模板
-│   ├── prompt-add.md          # /pa - 添加模板
-│   ├── prompt-new.md          # /pn - 创建模板
-│   ├── prompt-register.md     # /pr - 注册模板
-│   └── prompt-template.md     # /pt - 模板生成器
+│   ├── prompt-list.md         # /prompt-list - 列出模板
+│   ├── prompt-search.md       # /prompt-search - 搜索模板
+│   ├── prompt-show.md         # /prompt-show - 查看详情
+│   ├── prompt-fill.md         # /prompt-fill - 填充模板
+│   ├── prompt-add.md          # /prompt-add - 添加模板
+│   ├── prompt-new.md          # /prompt-new - 创建模板
+│   ├── prompt-register.md     # /prompt-register - 注册模板
+│   └── prompt-template.md     # /prompt-template - 模板生成器
 │
 ├── Agent 定义
 │   ├── prompt_hub_agent.md    # Prompt Hub 代理
@@ -190,17 +190,17 @@ code code_gen/sql.md
 
 ```bash
 # 基础命令
-/pl                    # 列出所有模板
-/pl code_gen          # 列出指定分类
-/ps SQL               # 搜索模板
-/psh sql              # 查看详情
-/pf sql query="查询订单" db_type="MySQL"  # 填充使用
+/prompt-list                    # 列出所有模板
+/prompt-list code_gen          # 列出指定分类
+/prompt-search SQL              # 搜索模板
+/prompt-show sql                # 查看详情
+/prompt-fill sql query="查询订单" db_type="MySQL"  # 填充使用
 
 # 扩展命令
-/pa template_name="xxx" category="xxx"  # 添加模板
-/pn                                      # 交互式创建
-/pr template_file="xxx.md"               # 注册模板
-/pt "我需要一个 XXX 模板"                # AI 生成模板
+/prompt-add template_name="xxx" category="xxx"  # 添加模板
+/prompt-new                                      # 交互式创建
+/prompt-register template_file="xxx.md"         # 注册模板
+/prompt-template "我需要一个 XXX 模板"          # AI 生成模板
 ```
 
 ### 方式五：使用 Agent
@@ -361,7 +361,7 @@ cat EXTENSION_GUIDE.md
 ./add-template.sh -n my_template -c code_gen -d "我的模板描述"
 
 # 或使用 Skills 交互式创建
-/pn
+/prompt-new
 ```
 
 ### 手动添加步骤
@@ -370,7 +370,7 @@ cat EXTENSION_GUIDE.md
 2. **编写模板内容** - 使用 `{variable}` 语法
 3. **更新 `registry.json`** - 添加模板元数据
 4. **更新 Skills 文件** - 在 `skills/prompt-*.md` 中添加逻辑
-5. **测试** - 使用 `/psh <模板名>` 验证
+5. **测试** - 使用 `/prompt-show <模板名>` 验证
 
 详细步骤请参考 [EXTENSION_GUIDE.md](EXTENSION_GUIDE.md)
 
